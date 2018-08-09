@@ -2049,6 +2049,9 @@
         "through": "2.3.8"
       }
     },
+    "interpret": {
+      "version": "1.1.0"
+    },
     "invariant": {
       "version": "2.2.4",
       "dev": true,
@@ -5376,6 +5379,12 @@
         "util-deprecate": "1.0.2"
       }
     },
+    "rechoir": {
+      "version": "0.6.2",
+      "requires": {
+        "resolve": "1.8.1"
+      }
+    },
     "redeyed": {
       "version": "2.1.1",
       "dev": true,
@@ -5495,7 +5504,6 @@
     },
     "resolve": {
       "version": "1.8.1",
-      "dev": true,
       "requires": {
         "path-parse": "1.0.5"
       }
@@ -5588,6 +5596,14 @@
     },
     "shebang-regex": {
       "version": "1.0.0"
+    },
+    "shelljs": {
+      "version": "0.8.2",
+      "requires": {
+        "glob": "7.1.2",
+        "interpret": "1.1.0",
+        "rechoir": "0.6.2"
+      }
     },
     "signal-exit": {
       "version": "3.0.2"

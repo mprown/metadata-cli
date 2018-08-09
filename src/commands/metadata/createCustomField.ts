@@ -25,7 +25,6 @@ export default class CreateObject extends SfdxCommand {
     protected static requiresUsername = true;
     public async run(): Promise<core.AnyJson> {
         const defaultoptions = this.flags.defaultoptions;
-        const fieldTypes = FieldType;
         let userInput;
         const questions: object[] = [
             {
@@ -38,7 +37,7 @@ export default class CreateObject extends SfdxCommand {
             type: 'list',
             message: 'What type of field?',
             default: 'Text',
-            choices: FieldType
+            choices: ['string', 'boolean']
             },
             {
             name: 'objectName',

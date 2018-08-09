@@ -10,6 +10,7 @@
     "@oclif/errors": "1",
     "@salesforce/command": "0.1.6",
     "inquirer": "^6.0.0",
+    "shelljs": "^0.8.2",
     "tslib": "1"
   },
   "babel": {

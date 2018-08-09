@@ -31,7 +31,11 @@ USAGE
 <!-- usagestop -->
 <!-- commands -->
 * [`createcustomobject hello:org [FILE]`](#createcustomobject-helloorg-file)
+* [`createcustomobject metadata:createcustomfield`](#createcustomobject-metadatacreatecustomfield)
 * [`createcustomobject metadata:object`](#createcustomobject-metadataobject)
+* [`createcustomobject util:newproject`](#createcustomobject-utilnewproject)
+* [`createcustomobject util:package:deploy`](#createcustomobject-utilpackagedeploy)
+* [`createcustomobject util:package:list`](#createcustomobject-utilpackagelist)
 
 ## `createcustomobject hello:org [FILE]`
 
@@ -61,6 +65,25 @@ EXAMPLES
 
 _See code: [src/commands/hello/org.ts](https://github.com/mprown/createcustomobject/blob/v0.0.1/src/commands/hello/org.ts)_
 
+## `createcustomobject metadata:createcustomfield`
+
+```
+USAGE
+  $ createcustomobject metadata:createcustomfield
+
+OPTIONS
+  -d, --defaultoptions                            name to print
+  -f, --force                                     example boolean flag
+  -n, --name=name                                 name to print
+  -u, --targetusername=targetusername             username or alias for the target org; overrides default target org
+  -x, --fullname=fullname                         name to print
+  --apiversion=apiversion                         override the api version used for api requests made by this command
+  --json                                          format output as json
+  --loglevel=(trace|debug|info|warn|error|fatal)  logging level for this command invocation
+```
+
+_See code: [src/commands/metadata/createcustomfield.ts](https://github.com/mprown/createcustomobject/blob/v0.0.1/src/commands/metadata/createcustomfield.ts)_
+
 ## `createcustomobject metadata:object`
 
 ```
@@ -79,6 +102,56 @@ OPTIONS
 ```
 
 _See code: [src/commands/metadata/object.ts](https://github.com/mprown/createcustomobject/blob/v0.0.1/src/commands/metadata/object.ts)_
+
+## `createcustomobject util:newproject`
+
+```
+USAGE
+  $ createcustomobject util:newproject
+
+OPTIONS
+  -f, --force                                     example boolean flag
+  -n, --name=name                                 name to print
+  -x, --fullname=fullname                         name to print
+  --json                                          format output as json
+  --loglevel=(trace|debug|info|warn|error|fatal)  logging level for this command invocation
+```
+
+_See code: [src/commands/util/newproject.ts](https://github.com/mprown/createcustomobject/blob/v0.0.1/src/commands/util/newproject.ts)_
+
+## `createcustomobject util:package:deploy`
+
+```
+USAGE
+  $ createcustomobject util:package:deploy
+
+OPTIONS
+  -f, --force                                     example boolean flag
+  -n, --name=name                                 name to print
+  -x, --fullname=fullname                         name to print
+  --json                                          format output as json
+  --loglevel=(trace|debug|info|warn|error|fatal)  logging level for this command invocation
+```
+
+_See code: [src/commands/util/package/deploy.ts](https://github.com/mprown/createcustomobject/blob/v0.0.1/src/commands/util/package/deploy.ts)_
+
+## `createcustomobject util:package:list`
+
+```
+USAGE
+  $ createcustomobject util:package:list
+
+OPTIONS
+  -f, --force                                     example boolean flag
+  -n, --name=name                                 name to print
+  -u, --targetusername=targetusername             username or alias for the target org; overrides default target org
+  -x, --fullname=fullname                         name to print
+  --apiversion=apiversion                         override the api version used for api requests made by this command
+  --json                                          format output as json
+  --loglevel=(trace|debug|info|warn|error|fatal)  logging level for this command invocation
+```
+
+_See code: [src/commands/util/package/list.ts](https://github.com/mprown/createcustomobject/blob/v0.0.1/src/commands/util/package/list.ts)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 # Debugging your plugin

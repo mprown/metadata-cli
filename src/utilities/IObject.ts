@@ -8,6 +8,4 @@ export interface IObject {
     nameField: object;
     }
 
-export  interface IField {
-    
-}
+export  interface IField {}
