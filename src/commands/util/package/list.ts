@@ -4,8 +4,8 @@ import {core, flags, SfdxCommand} from '@salesforce/command';
 import * as fs from 'fs';
 import * as inquirer from 'inquirer';
 import * as jsforce from 'jsforce';
+import {QueryResult} from 'jsforce';
 import * as shell from 'shelljs';
-import { ExecuteOptions } from 'jsforce';
 core.Messages.importMessagesDirectory(__dirname);
 
 const messages = core.Messages.loadMessages('createcustomobject', 'org');
@@ -24,26 +24,24 @@ export default class NewProject extends SfdxCommand {
         // Get org connection
         const conn = this.org.getConnection();
         // Set execute options
-        const execOptions: ExecuteOptions = {
+        const execOptions: jsforce.ExecuteOptions = {
             autoFetch: true,
-            maxFetch: true
+            maxFetch: 200
         };
-        const types = [{type: 'MetadataPackage', folder: null}];
+        // Use tooling api to query for metadata package
         conn.tooling.query('SELECT Name FROM MetadataPackage')
         .execute(execOptions, (err, metadata) => {
             if (err) { return console.error('err', err); }
-            const meta = metadata[0];
-            this.ux.log(metadata);
+            const records = metadata as Array<QueryResult<{}>>;
+            // Stringify metadata response
+            const recordString = JSON.stringify(metadata);
+            // Parse recordString back into any
+            const jsonRecords = JSON.parse(recordString);
+            // Iterate through packages and echo names
+            for (const jsonRecord of jsonRecords.records) {
+                shell.echo(jsonRecord.Name);
+            }
         });
         return {};
     }
-
-    public runCLI(userInput: inquirer.Answers): boolean {
-        // convert force-app to mdapioutput
-        shell.exec('sfdx force:source:convert -r ./force-app -d ./mdapioutput');
-        // call sfdx to deploy
-        shell.exec('sfdx force:mdapi:deploy -d ./mdapioutput -w 3 -u ' + userInput.defaultUserName);
-        return true;
-    }
-
 }
