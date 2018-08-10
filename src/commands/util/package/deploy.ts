@@ -14,7 +14,7 @@ export default class NewProject extends SfdxCommand {
         // flag with a value (-n, --name=VALUE)
         name: flags.string({char: 'n', description: messages.getMessage('nameFlagDescription')}),
         fullname: flags.string({char: 'x', description: messages.getMessage('nameFlagDescription')}),
-        force: flags.boolean({char: 'f', description: messages.getMessage('forceFlagDescription')}),
+        force: flags.boolean({char: 'f', description: messages.getMessage('forceFlagDescription')})
         // projectname: flags.boolean({char: 'p', description: messages.getMessage('nameFlagDescription')})
     };
     // Comment this out if your command does not require an org username
@@ -23,8 +23,8 @@ export default class NewProject extends SfdxCommand {
         // get list of available orgs
         const orgs = JSON.parse(shell.exec('sfdx force:org:list --json'));
         const nonscratchorgs = orgs.result.nonScratchOrgs;
-        let aliases: string[] = [];
-        for (let org of nonscratchorgs) {
+        const aliases: string[] = [];
+        for (const org of nonscratchorgs) {
              aliases.push(org.alias);
         }
         const questions: object[] = [

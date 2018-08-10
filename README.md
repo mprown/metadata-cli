@@ -36,6 +36,7 @@ USAGE
 * [`createcustomobject util:newproject`](#createcustomobject-utilnewproject)
 * [`createcustomobject util:package:deploy`](#createcustomobject-utilpackagedeploy)
 * [`createcustomobject util:package:list`](#createcustomobject-utilpackagelist)
+* [`createcustomobject util:package:retrieve`](#createcustomobject-utilpackageretrieve)
 
 ## `createcustomobject hello:org [FILE]`
 
@@ -152,6 +153,24 @@ OPTIONS
 ```
 
 _See code: [src/commands/util/package/list.ts](https://github.com/mprown/createcustomobject/blob/v0.0.1/src/commands/util/package/list.ts)_
+
+## `createcustomobject util:package:retrieve`
+
+```
+USAGE
+  $ createcustomobject util:package:retrieve
+
+OPTIONS
+  -f, --force                                     example boolean flag
+  -n, --name=name                                 name to print
+  -u, --targetusername=targetusername             username or alias for the target org; overrides default target org
+  -x, --fullname=fullname                         name to print
+  --apiversion=apiversion                         override the api version used for api requests made by this command
+  --json                                          format output as json
+  --loglevel=(trace|debug|info|warn|error|fatal)  logging level for this command invocation
+```
+
+_See code: [src/commands/util/package/retrieve.ts](https://github.com/mprown/createcustomobject/blob/v0.0.1/src/commands/util/package/retrieve.ts)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 # Debugging your plugin
