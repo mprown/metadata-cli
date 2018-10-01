@@ -112,7 +112,10 @@ USAGE
 
 OPTIONS
   -f, --force                                     example boolean flag
+  -g, --gitremote=gitremote                       Specify the desired git remote for the project
   -n, --name=name                                 name to print
+  -p, --projectname=projectname                   Specify the name of this project
+  -u, --defaultusername=defaultusername           Specifies which username to set as the defaultusername
   -x, --fullname=fullname                         name to print
   --json                                          format output as json
   --loglevel=(trace|debug|info|warn|error|fatal)  logging level for this command invocation
@@ -196,3 +199,4 @@ $ NODE_OPTIONS=--inspect-brk bin/run hello:org -u myOrg@example.com
 6. Hit the green play button at the top middle of VS Code (this play button will be to the right of the play button that you clicked in step #5).
 <br><img src=".images/vscodeScreenshot.png" width="480" height="278"><br>
 Congrats, you are debugging!
+

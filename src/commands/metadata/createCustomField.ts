@@ -41,7 +41,7 @@ export default class CreateObject extends SfdxCommand {
             },
             {
             name: 'objectName',
-            message: 'Which object does this field belong to?',
+            message: 'Which object does this field belong to?'
             }];
         if (!defaultoptions) {
             questions.push({
