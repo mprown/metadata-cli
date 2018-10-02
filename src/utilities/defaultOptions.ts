@@ -1,5 +1,5 @@
 import {core, flags, SfdxCommand} from '@salesforce/command';
-import { FieldType } from '../../node_modules/@types/jsforce';
+import { Field, FieldType } from '../../node_modules/@types/jsforce';
 import * as IObject from './IObject';
 export class DefaultOptions {
 public defaults: IObject.IObject;
@@ -17,4 +17,9 @@ constructor(objectName: string) {
         }
     };
 }
+}
+
+// Custom field default options
+export class CustomFieldDefaults {
+    public defaults: Field;
 }

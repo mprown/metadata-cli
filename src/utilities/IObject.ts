@@ -7,3 +7,5 @@ export interface IObject {
     pluralLabel: string;
     nameField: object;
     }
+
+export  interface IField {}
